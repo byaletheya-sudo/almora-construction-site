@@ -3,354 +3,177 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Almora Construction</title>
-<meta name="description" content="Almora Construction builds ADUs, new homes, additions and remodels in the San Fernando Valley. Licensed and insured. Free estimates: (747) 368-1225.">
+<title>Almora Construction | ADUs, New Homes and Remodels in Granada Hills</title>
+<meta name="description" content="Almora Construction builds ADUs, new homes, additions and remodels across the San Fernando Valley. Licensed and insured, CSLB #1159801. Free estimates: (747) 368-1225.">
 <link rel="canonical" href="https://almoraconstruction.com/">
-<meta property="og:title" content="Almora Construction">
-<meta property="og:description" content="ADUs, new homes, additions and remodels in the San Fernando Valley. Free estimates: (747) 368-1225.">
+<meta property="og:title" content="Almora Construction | ADUs, New Homes and Remodels in Granada Hills">
+<meta property="og:description" content="Almora Construction builds ADUs, new homes, additions and remodels across the San Fernando Valley. Licensed and insured, CSLB #1159801. Free estimates: (747) 368-1225.">
 <meta property="og:url" content="https://almoraconstruction.com/">
 <meta property="og:type" content="website">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"GeneralContractor","name":"Almora Construction","url":"https://almoraconstruction.com/","telephone":"+1-747-368-1225","email":"almoraconstruction@gmail.com","address":{"@type":"PostalAddress","streetAddress":"10727 White Oak Ave, Unit 205","addressLocality":"Granada Hills","addressRegion":"CA","postalCode":"91344","addressCountry":"US"},"areaServed":"San Fernando Valley, CA"}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Archivo:wdth,wght@125,900&display=swap" rel="stylesheet">
-<style>
-  /* The idea: the site reads like a set of construction drawings.
-     Paper, ink, one safety orange. Each section is a "sheet" with a title block. */
-  :root {
-    --paper: #f4f5f2;
-    --paper-2: #e6e9ec;
-    --ink: #0c1f3f;
-    --ink-2: #4a5568;
-    --line: #0c1f3f;
-    --hair: #c3cad3;
-    --orange: #1d5fd1;
-    --orange-ink: #ffffff;
-    --pad: 16px;
-    --max: 1120px;
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font: 400 17px/1.55 "Barlow", system-ui, sans-serif;
-    padding-bottom: 72px; /* room for the phone call bar */
-  }
-  a { color: inherit; }
-  img { max-width: 100%; display: block; }
-  h1, h2, h3 {
-    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .01em;
-    line-height: .95;
-    margin: 0;
-  }
-  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
-  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
-
-  /* Top bar */
-  .top {
-    position: sticky; top: 0; z-index: 10;
-    background: var(--paper);
-    border-bottom: 2px solid var(--line);
-  }
-  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 12px; }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .mark {
-    width: 30px; height: 30px; border: 2px solid var(--ink);
-    display: grid; place-items: center;
-    font: 700 16px/1 "Barlow Condensed", sans-serif;
-  }
-  .brand b { font-family: "Archivo", sans-serif; font-weight: 900; font-stretch: 125%; font-size: 22px; line-height: 1; letter-spacing: -.01em; }
-  .brand small { display: block; font: 500 8.5px/1 "IBM Plex Mono", monospace; letter-spacing: .42em; margin-top: 3px; }
-  .brand .wm { display: block; }
-  .top nav { display: none; gap: 22px; }
-  .top nav a { text-decoration: none; font-weight: 500; }
-  .top nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
-  .top .call-sm { font-weight: 600; text-decoration: none; white-space: nowrap; }
-
-  /* Buttons */
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    min-height: 52px; padding: 0 22px;
-    font: 600 18px/1 "Barlow", sans-serif;
-    text-decoration: none;
-    border: 2px solid var(--ink);
-    background: transparent; color: var(--ink);
-  }
-  .btn.solid { background: var(--orange); border-color: var(--orange); color: var(--orange-ink); }
-  .btn:active { transform: translateY(1px); }
-  .btn svg { width: 20px; height: 20px; }
-
-  /* Sheet: every section */
-  .sheet { border-bottom: 2px solid var(--line); padding: 56px 0; }
-  .tb { /* title block */
-    display: grid; grid-template-columns: auto 1fr; border: 2px solid var(--line);
-    margin-bottom: 28px; max-width: 420px;
-  }
-  .tb > span { padding: 6px 10px; }
-  .tb .no { border-right: 2px solid var(--line); background: var(--ink); color: var(--paper); font-weight: 500; }
-  .sheet h2 { font-size: clamp(40px, 9vw, 72px); margin-bottom: 16px; }
-  .lede { font-size: 19px; color: var(--ink-2); max-width: 38em; margin: 0; }
-
-  /* Hero */
-  .hero { padding: 36px 0 0; border-bottom: 2px solid var(--line); }
-  .hero .tb { margin-bottom: 20px; }
-  .hero h1 { font-size: clamp(56px, 15vw, 132px); }
-  .hero h1 em { font-style: normal; color: var(--orange); }
-  .hero p { font-size: 20px; max-width: 30em; margin: 18px 0 24px; }
-  .cta { display: flex; flex-wrap: wrap; gap: 10px; }
-  .facts {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    border-top: 2px solid var(--line); margin-top: 36px;
-  }
-  .facts div { padding: 14px 0; border-bottom: 1px solid var(--hair); }
-  .facts div:nth-child(odd) { padding-right: 12px; border-right: 1px solid var(--hair); }
-  .facts div:nth-child(even) { padding-left: 12px; }
-  .facts b { display: block; font: 700 30px/1 "Barlow Condensed", sans-serif; }
-  .facts .mono { color: var(--ink-2); }
-
-  /* Photo placeholder: drafting hatch until real photos arrive */
-  .ph {
-    position: relative; aspect-ratio: 4 / 3; border: 2px solid var(--line);
-    background:
-      repeating-linear-gradient(45deg, transparent 0 9px, var(--hair) 9px 10px),
-      var(--paper-2);
-    display: grid; place-items: center;
-  }
-  .ph span { background: var(--paper); padding: 4px 8px; border: 1px solid var(--line); }
-  .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-
-  /* Services */
-  .svc { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--line); }
-  .svc li {
-    display: grid; grid-template-columns: 44px 1fr; gap: 4px 12px;
-    padding: 18px 0; border-bottom: 1px solid var(--hair);
-  }
-  .svc .n { grid-row: span 2; color: var(--orange); font: 500 14px/1.6 "IBM Plex Mono", monospace; }
-  .svc h3 { font-size: 28px; }
-  .svc p { margin: 0; color: var(--ink-2); }
-
-  /* Projects */
-  .jobs { display: grid; gap: 28px; }
-  .job figcaption {
-    display: grid; grid-template-columns: 1fr auto; border: 2px solid var(--line); border-top: 0;
-  }
-  .job figcaption > * { padding: 10px 12px; }
-  .job h3 { font-size: 24px; }
-  .job .where { color: var(--ink-2); margin-top: 4px; display: block; }
-  .job .yr { border-left: 2px solid var(--line); display: grid; place-items: center; }
-  figure { margin: 0; }
-
-  /* About */
-  .about { display: grid; gap: 28px; }
-  .about p { margin: 0 0 14px; max-width: 34em; }
-  .about .sig { font: 700 26px/1 "Barlow Condensed", sans-serif; text-transform: uppercase; margin-top: 8px; }
-
-  /* Area */
-  .area-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; }
-  .area-list li { border: 2px solid var(--line); padding: 6px 12px; font-weight: 500; }
-
-  /* Contact */
-  .contact { background: var(--ink); color: var(--paper); border-bottom: 0; }
-  .contact .tb { border-color: var(--paper); }
-  .contact .tb .no { background: var(--orange); color: #fff; border-color: var(--paper); }
-  .contact .lede { color: #b3c0d6; }
-  .contact .btn { border-color: var(--paper); color: var(--paper); }
-  .contact .btn.solid { border-color: var(--orange); color: #fff; }
-  .big-phone {
-    display: block; margin: 24px 0; text-decoration: none;
-    font: 700 clamp(44px, 12vw, 96px)/1 "Barlow Condensed", sans-serif;
-  }
-  .big-phone:hover { color: #6fa0ff; }
-  .contact dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; margin: 32px 0 0; }
-  .contact dt { color: #8295b5; }
-  .contact dd { margin: 0; }
-  footer { background: var(--ink); color: #8295b5; padding: 20px 0 28px; border-top: 1px solid #23395e; }
-  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
-
-  /* Phone call bar */
-  .callbar {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
-    display: grid; grid-template-columns: 1fr 1fr;
-    border-top: 2px solid var(--line);
-    padding-bottom: env(safe-area-inset-bottom);
-    background: var(--paper);
-  }
-  .callbar a {
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-    height: 60px; text-decoration: none; font-weight: 600; font-size: 18px;
-  }
-  .callbar a + a { background: var(--orange); color: #fff; }
-  .callbar svg { width: 20px; height: 20px; }
-
-  @media (min-width: 760px) {
-    :root { --pad: 32px; }
-    body { padding-bottom: 0; }
-    .callbar { display: none; }
-    .top nav { display: flex; }
-    .hero { padding-top: 56px; }
-    .hero h1 { font-size: clamp(56px, 7.5vw, 112px); }
-    .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: end; }
-    .facts { grid-template-columns: repeat(4, 1fr); }
-    .facts div, .facts div:nth-child(odd), .facts div:nth-child(even) { padding: 16px; border-right: 1px solid var(--hair); }
-    .facts div:first-child { padding-left: 0; }
-    .facts div:last-child { border-right: 0; }
-    .sheet { padding: 88px 0; }
-    .svc { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
-    .jobs { grid-template-columns: repeat(3, 1fr); }
-    .about { grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-    .contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: end; }
-  }
-</style>
+<meta name="theme-color" content="#0c1f3f">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="preload" as="image" href="/assets/hero-poster.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"GeneralContractor","name":"Almora Construction","url":"https://almoraconstruction.com/","telephone":"+1-747-368-1225","email":"almoraconstruction@gmail.com","address":{"@type":"PostalAddress","streetAddress":"10727 White Oak Ave, Unit 205","addressLocality":"Granada Hills","addressRegion":"CA","postalCode":"91344","addressCountry":"US"},"areaServed":["Granada Hills","Porter Ranch","Northridge","Mission Hills","Sylmar","Chatsworth","North Hills","Reseda","Van Nuys","Encino","Sherman Oaks","Woodland Hills"],"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"license","name":"California CSLB license #1159801"}}</script>
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Almora Construction"><span class="wm"><b>ALMORA</b><small>CONSTRUCTION</small></span></a>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#area">Area</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="call-sm" href="tel:+17473681225">(747) 368-1225</a>
+    <a class="brand" href="/" aria-label="Almora Construction, home"><b>ALMORA</b><small>CONSTRUCTION</small></a>
+    <nav class="nav-links" aria-label="Main"><a href="/adus/">ADUs</a><a href="/services/">Services</a><a href="/projects/">Projects</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav>
+    <div class="top-right">
+      <a class="call-sm" href="tel:+17473681225">(747) 368-1225</a>
+      <details class="menu">
+        <summary aria-label="Menu"><i></i>Menu</summary>
+        <nav class="menu-panel" aria-label="Menu"><a href="/adus/">ADUs<span>Backyard units</span></a><a href="/services/">Services<span>Everything we build</span></a><a href="/projects/">Projects<span>Past jobs</span></a><a href="/about/">About<span>Who we are</span></a><a href="/contact/">Contact<span>Free estimate</span></a>
+          <a class="btn solid" href="tel:+17473681225"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call (747) 368-1225</a>
+        </nav>
+      </details>
+    </div>
   </div>
 </header>
+<main id="main">
+<section class="hero">
+  <div class="hero-media">
+    <video autoplay muted loop playsinline preload="metadata" poster="/assets/hero-poster.jpg" aria-hidden="true">
+      <source src="/assets/hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap">
+    <div class="tb mono"><span class="no">A0</span><span>Lic. #1159801 &middot; Licensed &amp; insured</span></div>
+    <h1>We build <em>ADUs.</em><br>And a lot more.</h1>
+    <p class="sub">New homes, additions, remodels and commercial builds. Based in Granada Hills, working across the San Fernando Valley.</p>
+    <div class="cta">
+      <a class="btn solid" href="tel:+17473681225"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call for a free estimate</a>
+      <a class="btn" href="/projects/">See our work</a>
+    </div>
+    <div class="facts">
+      <div><b>Free</b><span class="mono">Estimates</span></div>
+      <div><b>ADUs</b><span class="mono">Plans to keys</span></div>
+      <div><b>Insured</b><span class="mono">Licensed &amp; insured</span></div>
+      <div><b>Local</b><span class="mono">Granada Hills</span></div>
+    </div>
+  </div>
+</section>
 
-<main id="top">
-  <section class="hero">
-    <div class="wrap">
-      <div class="tb mono"><span class="no">A0</span><span>Lic. #1159801 &middot; Licensed &amp; insured</span></div>
-      <div class="hero-grid">
-        <div>
-          <h1>We build <em>ADUs.</em><br>And a lot more.</h1>
-          <p>New homes, additions, remodels and commercial builds. Based in Granada Hills, working across the San Fernando Valley.</p>
-          <div class="cta">
-            <a class="btn solid" href="tel:+17473681225">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-              Call for a free estimate
-            </a>
-            <a class="btn" href="#work">See our work</a>
-          </div>
-        </div>
-        <div class="ph" style="margin-top:28px"><span class="mono">Hero photo</span></div>
+<section class="sheet">
+  <div class="wrap">
+    <div class="tb mono"><span class="no">A1</span><span>Services</span></div>
+    <h2>What we build</h2>
+    <p class="lede">Homes, ADUs and commercial work. One team from the first visit to the final inspection.</p>
+    <ul class="svc"><li><a href="/adus/"><span class="n">01</span><h3>ADUs</h3><span class="arr" aria-hidden="true">&rarr;</span><p>Backyard units and garage conversions, from plans to final inspection.</p></a></li><li><a href="/new-construction/"><span class="n">02</span><h3>New construction</h3><span class="arr" aria-hidden="true">&rarr;</span><p>Custom homes, built from the ground up.</p></a></li><li><a href="/remodeling/"><span class="n">03</span><h3>Remodeling</h3><span class="arr" aria-hidden="true">&rarr;</span><p>Kitchens, bathrooms, additions and whole homes.</p></a></li><li><a href="/commercial/"><span class="n">04</span><h3>Commercial</h3><span class="arr" aria-hidden="true">&rarr;</span><p>Build-outs and repairs for your business.</p></a></li></ul>
+  </div>
+</section>
+
+<section class="sheet alt">
+  <div class="wrap split">
+    <div class="ph"><span class="mono">ADU photo</span></div>
+    <div>
+      <div class="tb mono"><span class="no">A2</span><span>ADUs</span></div>
+      <h2>More home on the lot you have</h2>
+      <p>A backyard unit for family, a rental for extra income, or a garage turned into a real living space.</p>
+      <p>We handle the plans, the city permits and the build, so you deal with one company the whole way.</p>
+      <a class="btn solid" href="/adus/" style="margin-top:8px">How an ADU works</a>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap">
+    <div class="tb mono"><span class="no">A3</span><span>Recent work</span></div>
+    <h2>Past jobs</h2>
+    <p class="lede">A few from the last couple of years.</p>
+    <div class="cards">
+      <figure class="card">
+        <div class="ph"><span class="mono">Photo</span></div>
+        <figcaption><div><h3>Backyard ADU</h3><span class="where mono">Granada Hills</span></div><span class="yr mono">2026</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="ph"><span class="mono">Photo</span></div>
+        <figcaption><div><h3>Home addition</h3><span class="where mono">Northridge</span></div><span class="yr mono">2025</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="ph"><span class="mono">Photo</span></div>
+        <figcaption><div><h3>Kitchen remodel</h3><span class="where mono">Porter Ranch</span></div><span class="yr mono">2025</span></figcaption>
+      </figure>
+    </div>
+    <a class="more" href="/projects/">All projects &rarr;</a>
+  </div>
+</section>
+
+<section class="sheet alt">
+  <div class="wrap split top">
+    <div>
+      <div class="tb mono"><span class="no">A4</span><span>How we work</span></div>
+      <h2>No surprises</h2>
+      <p class="lede">What you can count on, on every job.</p>
+    </div>
+    <ul class="ticks">
+      <li>A free visit and a written estimate before anything starts.</li>
+      <li>One person to call, who knows your job.</li>
+      <li>We pull the permits and meet the inspectors.</li>
+      <li>A clean site at the end of every day.</li>
+      <li>Licensed and insured. CSLB #1159801.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap">
+    <div class="tb mono"><span class="no">A5</span><span>Service area</span></div>
+    <h2>Where we work</h2>
+    <p class="lede">The San Fernando Valley and nearby. Not on the list? Call and ask.</p>
+    <ul class="area-list"><li>Granada Hills</li><li>Porter Ranch</li><li>Northridge</li><li>Mission Hills</li><li>Sylmar</li><li>Chatsworth</li><li>North Hills</li><li>Reseda</li><li>Van Nuys</li><li>Encino</li><li>Sherman Oaks</li><li>Woodland Hills</li></ul>
+  </div>
+</section>
+
+<section class="sheet contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="tb mono"><span class="no">A6</span><span>Contact</span></div>
+      <h2>Get a free estimate</h2>
+      <p class="lede">Call or text. We usually get back to you the same day.</p>
+      <a class="big-phone" href="tel:+17473681225">(747) 368-1225</a>
+      <div class="cta">
+        <a class="btn solid" href="tel:+17473681225"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+        <a class="btn" href="sms:+17473681225"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Text</a>
+        <a class="btn" href="/contact/">Send details</a>
       </div>
-      <div class="facts">
-        <div><b>Free</b><span class="mono">Estimates</span></div>
-        <div><b>ADUs</b><span class="mono">Start to finish</span></div>
-        <div><b>Insured</b><span class="mono">Licensed &amp; insured</span></div>
-        <div><b>Local</b><span class="mono">Granada Hills</span></div>
-      </div>
     </div>
-  </section>
+    <dl class="mono">
+      <dt>Email</dt><dd><a href="mailto:almoraconstruction@gmail.com">almoraconstruction@gmail.com</a></dd>
+      <dt>Office</dt><dd>10727 White Oak Ave, Unit 205<br>Granada Hills, CA 91344</dd>
+      <dt>Hours</dt><dd>Mon to Sat, 7am to 5pm</dd>
+      <dt>License</dt><dd>CSLB #1159801</dd>
+    </dl>
+  </div>
+</section>
 
-  <section class="sheet" id="services">
-    <div class="wrap">
-      <div class="tb mono"><span class="no">A1</span><span>Services</span></div>
-      <h2>What we do</h2>
-      <p class="lede">Homes, ADUs and commercial work. One team from permits to final inspection.</p>
-      <ul class="svc" style="margin-top:28px">
-        <li><span class="n">01</span><h3>New construction</h3><p>Custom homes, built from the ground up.</p></li>
-        <li><span class="n">02</span><h3>ADUs &amp; additions</h3><p>A backyard unit or an extra room. More space on the lot you already have.</p></li>
-        <li><span class="n">03</span><h3>Remodeling</h3><p>Kitchens, bathrooms and whole homes.</p></li>
-        <li><span class="n">04</span><h3>Commercial</h3><p>Build-outs and repairs for your business.</p></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="sheet" id="work">
-    <div class="wrap">
-      <div class="tb mono"><span class="no">A2</span><span>Recent work</span></div>
-      <h2>Past jobs</h2>
-      <p class="lede" style="margin-bottom:28px">A few from the last couple of years.</p>
-      <div class="jobs">
-        <figure class="job">
-          <div class="ph"><span class="mono">Photo</span></div>
-          <figcaption><div><h3>Backyard ADU</h3><span class="where mono">Granada Hills</span></div><span class="yr mono">2026</span></figcaption>
-        </figure>
-        <figure class="job">
-          <div class="ph"><span class="mono">Photo</span></div>
-          <figcaption><div><h3>Home addition</h3><span class="where mono">Porter Ranch</span></div><span class="yr mono">2025</span></figcaption>
-        </figure>
-        <figure class="job">
-          <div class="ph"><span class="mono">Photo</span></div>
-          <figcaption><div><h3>Kitchen remodel</h3><span class="where mono">Northridge</span></div><span class="yr mono">2025</span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="sheet" id="about">
-    <div class="wrap about">
-      <div class="ph"><span class="mono">Owner photo</span></div>
-      <div>
-        <div class="tb mono"><span class="no">A3</span><span>About</span></div>
-        <h2>Who you'll deal with</h2>
-        <p>I started out framing houses and opened my own company in 2005. I still walk every job myself.</p>
-        <p>You get a written price before we start, a clean site every day, and a straight answer when you call.</p>
-        <div class="sig">Owner Name</div>
-        <span class="mono" style="color:var(--ink-2)">Owner</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="sheet" id="area">
-    <div class="wrap">
-      <div class="tb mono"><span class="no">A4</span><span>Service area</span></div>
-      <h2>Where we work</h2>
-      <p class="lede">The San Fernando Valley and nearby. Not on the list? Call and ask.</p>
-      <ul class="area-list">
-        <li>Granada Hills</li><li>Porter Ranch</li><li>Northridge</li><li>Mission Hills</li>
-        <li>Sylmar</li><li>Chatsworth</li><li>Reseda</li><li>Encino</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="sheet contact" id="contact">
-    <div class="wrap contact-grid">
-      <div>
-        <div class="tb mono"><span class="no">A5</span><span>Contact</span></div>
-        <h2>Get an estimate</h2>
-        <p class="lede">Call or text. We usually get back the same day.</p>
-        <a class="big-phone" href="tel:+17473681225">(747) 368-1225</a>
-        <div class="cta">
-          <a class="btn solid" href="tel:+17473681225">Call</a>
-          <a class="btn" href="sms:+17473681225">Text</a>
-          <a class="btn" href="mailto:almoraconstruction@gmail.com?subject=Estimate%20request">Email</a>
-        </div>
-      </div>
-      <dl class="mono">
-        <dt>Email</dt><dd><a href="mailto:almoraconstruction@gmail.com">almoraconstruction@gmail.com</a></dd>
-        <dt>Office</dt><dd>10727 White Oak Ave, Unit 205<br>Granada Hills, CA 91344</dd>
-        <dt>Hours</dt><dd>Mon to Sat, 7am to 5pm</dd>
-        <dt>License</dt><dd>CSLB #1159801</dd>
-      </dl>
-    </div>
-  </section>
 </main>
-
 <footer>
-  <div class="wrap mono">
-    <span>&copy; <span id="y">2026</span> Almora Construction</span>
-    <span>Lic. #1159801</span>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="/"><b>ALMORA</b><small>CONSTRUCTION</small></a>
+        <p style="margin-top:14px">Licensed and insured general contractor.<br>CSLB #1159801</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="/adus/">ADUs</a></li><li><a href="/new-construction/">New construction</a></li><li><a href="/remodeling/">Remodeling</a></li><li><a href="/commercial/">Commercial</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+      <div><h4>Reach us</h4><ul>
+        <li><a href="tel:+17473681225">(747) 368-1225</a></li>
+        <li><a href="mailto:almoraconstruction@gmail.com">almoraconstruction@gmail.com</a></li>
+        <li>10727 White Oak Ave, Unit 205<br>Granada Hills, CA 91344</li>
+      </ul></div>
+    </div>
+    <div class="legal mono"><span>&copy; <span id="yr">2026</span> Almora Construction</span><span>Lic. #1159801</span></div>
   </div>
 </footer>
-
 <nav class="callbar" aria-label="Quick contact">
-  <a href="sms:+17473681225">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg>Text
-  </a>
-  <a href="tel:+17473681225">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call now
-  </a>
+  <a href="sms:+17473681225"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Text</a>
+  <a href="tel:+17473681225"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call now</a>
 </nav>
-
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>

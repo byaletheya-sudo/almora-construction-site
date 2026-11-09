@@ -1,0 +1,63 @@
+<!--meta {"path": "/contact/", "out": "contact/index.html", "title": "Contact and Free Estimates", "description": "Call or text Almora Construction at (747) 368-1225 for a free estimate. Office in Granada Hills, CA."} -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs mono"><a href="/">Home</a> / Contact</div>
+    <h1>Free <em>estimate</em></h1>
+    <p class="lede">The fastest way is a call or a text. Or send the details below and we'll get back to you.</p>
+    <a class="big-phone" href="tel:{{TEL}}" style="margin:8px 0 20px">{{PHONE}}</a>
+    <div class="cta">
+      <a class="btn solid" href="tel:{{TEL}}">{{ICON_PHONE}}Call</a>
+      <a class="btn" href="sms:{{TEL}}">{{ICON_TEXT}}Text</a>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap split top">
+    <div>
+      <div class="tb mono"><span class="no">C1</span><span>Send details</span></div>
+      <h2>Tell us about the job</h2>
+      <p class="lede">This opens an email to us with your answers filled in.</p>
+      <dl class="mono" style="display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin-top:28px">
+        <dt style="color:var(--ink-2)">Email</dt><dd style="margin:0"><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></dd>
+        <dt style="color:var(--ink-2)">Office</dt><dd style="margin:0">{{STREET}}<br>Granada Hills, CA 91344</dd>
+        <dt style="color:var(--ink-2)">Hours</dt><dd style="margin:0">{{HOURS}}</dd>
+        <dt style="color:var(--ink-2)">License</dt><dd style="margin:0">CSLB #{{LICENSE}}</dd>
+      </dl>
+    </div>
+    <form class="form" id="est">
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+      <label>Project address or area<input name="where" autocomplete="street-address"></label>
+      <label>What do you want to build?
+        <select name="type">
+          <option>ADU</option><option>New home</option><option>Remodel</option><option>Addition</option><option>Commercial</option><option>Something else</option>
+        </select>
+      </label>
+      <label>Details<textarea name="details" placeholder="Size, timing, anything we should know"></textarea></label>
+      <button class="btn solid" type="submit">Send to Almora</button>
+      <p class="note">Prefer to talk? Call {{PHONE}}.</p>
+    </form>
+  </div>
+</section>
+
+<section class="sheet alt">
+  <div class="wrap">
+    <div class="tb mono"><span class="no">C2</span><span>Office</span></div>
+    <h2>Find us</h2>
+    <p class="lede">{{STREET}}, Granada Hills, CA 91344</p>
+    <a class="btn" href="https://maps.google.com/?q=10727+White+Oak+Ave+Unit+205+Granada+Hills+CA+91344" rel="noopener">Open in Maps</a>
+  </div>
+</section>
+
+<script>
+document.getElementById('est').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = new FormData(this), lines = [];
+  [['Name','name'],['Phone','phone'],['Where','where'],['Project','type'],['Details','details']].forEach(function (p) {
+    if (f.get(p[1])) lines.push(p[0] + ': ' + f.get(p[1]));
+  });
+  location.href = 'mailto:{{EMAIL}}?subject=' + encodeURIComponent('Estimate request: ' + f.get('type')) +
+    '&body=' + encodeURIComponent(lines.join('\n'));
+});
+</script>
