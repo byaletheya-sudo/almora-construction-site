@@ -96,28 +96,23 @@ p { margin: 0 0 14px; }
 .lede { font-size: 19px; color: var(--ink-2); max-width: 38em; }
 .more { display: inline-block; margin-top: 18px; font-weight: 600; text-underline-offset: 4px; }
 
-/* ---------- Home hero with video ---------- */
-.hero { position: relative; color: #fff; background: var(--ink); border-bottom: 2px solid var(--line); overflow: hidden; }
-.hero-media { position: absolute; inset: 0; }
-.hero-media video, .hero-media img { width: 100%; height: 100%; object-fit: cover; }
-.hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,31,63,.55) 0%, rgba(12,31,63,.78) 70%, rgba(12,31,63,.92) 100%); }
-.hero-media.empty {
-  background: repeating-linear-gradient(45deg, transparent 0 11px, rgba(255,255,255,.06) 11px 12px), var(--ink);
-}
-.hero .wrap { position: relative; padding-top: 40px; padding-bottom: 36px; }
-.hero .tb { border-color: rgba(255,255,255,.85); }
-.hero .tb .no { background: var(--blue); border-color: rgba(255,255,255,.85); color: #fff; }
-.hero h1 { font-size: clamp(58px, 16vw, 128px); }
-.hero h1 em { font-style: normal; color: var(--blue-2); }
-.hero p.sub { font-size: 20px; max-width: 30em; margin: 18px 0 26px; color: #dfe6f2; }
-.hero .btn { border-color: #fff; color: #fff; }
-.hero .btn.solid { border-color: var(--blue); }
-.facts { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 2px solid rgba(255,255,255,.85); margin-top: 40px; }
-.facts div { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.22); }
-.facts div:nth-child(odd) { padding-right: 12px; border-right: 1px solid rgba(255,255,255,.22); }
-.facts div:nth-child(even) { padding-left: 12px; }
-.facts b { display: block; font: 700 30px/1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
-.facts .mono { color: var(--navy-text); }
+/* ---------- Home hero: text on paper, video in a framed sheet ---------- */
+.hero { border-bottom: 2px solid var(--line); }
+.hero .wrap { padding-top: 36px; padding-bottom: 40px; }
+.hero h1 { font-size: clamp(48px, 13vw, 104px); max-width: 11ch; }
+.hero h1 em { font-style: normal; color: var(--blue); }
+.hero p.sub { font-size: 19px; color: var(--ink-2); max-width: 32em; margin: 18px 0 24px; }
+.hero-frame { margin: 36px 0 0; border: 2px solid var(--line); }
+.hero-media { position: relative; aspect-ratio: 16 / 9; background: var(--ink); overflow: hidden; }
+.hero-media video, .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-frame figcaption { display: flex; justify-content: space-between; gap: 12px; padding: 8px 12px; border-top: 2px solid var(--line); background: var(--paper); }
+.hero-frame figcaption span + span { color: var(--ink-2); }
+.facts { display: grid; grid-template-columns: repeat(2, 1fr); border: 2px solid var(--line); border-top: 0; }
+.facts div { padding: 14px 12px; border-bottom: 1px solid var(--hair); }
+.facts div:nth-child(odd) { border-right: 1px solid var(--hair); }
+.facts div:nth-last-child(-n+2) { border-bottom: 0; }
+.facts b { display: block; font: 700 28px/1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.facts .mono { color: var(--ink-2); }
 
 /* ---------- Page header (inner pages) ---------- */
 .page-head { border-bottom: 2px solid var(--line); padding: 40px 0 44px; }
@@ -239,11 +234,10 @@ footer .legal { margin-top: 28px; padding-top: 18px; border-top: 1px solid #2339
   body { padding-bottom: 0; }
   .callbar, .menu { display: none; }
   .nav-links { display: flex; gap: 22px; }
-  .hero .wrap { padding-top: 84px; padding-bottom: 48px; }
-  .hero h1 { font-size: clamp(72px, 8.4vw, 124px); }
+  .hero .wrap { padding-top: 64px; padding-bottom: 72px; }
+  .hero h1 { font-size: clamp(72px, 7.2vw, 104px); max-width: 17ch; }
   .facts { grid-template-columns: repeat(4, 1fr); }
-  .facts div, .facts div:nth-child(odd), .facts div:nth-child(even) { padding: 16px; border-right: 1px solid rgba(255,255,255,.22); }
-  .facts div:first-child { padding-left: 0; }
+  .facts div { border-bottom: 0; border-right: 1px solid var(--hair); padding: 16px; }
   .facts div:last-child { border-right: 0; }
   .page-head { padding: 64px 0 72px; }
   .page-head-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: end; }

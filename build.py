@@ -162,6 +162,8 @@ def schema():
 
 
 def page(meta, body):
+    import hashlib
+    CSS_V = hashlib.md5((ROOT / "assets" / "site.css").read_bytes()).hexdigest()[:8]
     path = meta["path"]
     title = meta["title"]
     full_title = title if path == "/" else f"{title} | Almora Construction"
@@ -182,7 +184,7 @@ def page(meta, body):
 <meta name="theme-color" content="#0c1f3f">
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 {FONTS}
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={CSS_V}">
 {extra_head}
 <script type="application/ld+json">{schema()}</script>
 </head>
