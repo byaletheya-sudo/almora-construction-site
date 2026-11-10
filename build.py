@@ -20,7 +20,7 @@ BIZ = {
     "street": "10727 White Oak Ave, Unit 205",
     "city": "Granada Hills", "state": "CA", "zip": "91344",
     "license": "1159801",
-    "hours": "Mon to Sat, 7am to 5pm",  # TODO confirm with owner
+    "hours": "Mon to Fri, 8am to 5pm<br>Sat, 8am to 3pm<br>Sun, closed",
 }
 
 NAV = [  # (path, label, menu note)
@@ -128,7 +128,7 @@ def footer():
     <div class="cols">
       <div>
         <a class="brand" href="/"><b>ALMORA</b><small>CONSTRUCTION</small></a>
-        <p style="margin-top:14px">Licensed and insured general contractor.<br>CSLB #{b["license"]}</p>
+        <p style="margin-top:14px">20 years of building experience.<br>Licensed and insured. CSLB #{b["license"]}</p>
       </div>
       <div><h4>Services</h4><ul>{svc}</ul></div>
       <div><h4>Company</h4><ul>{co}</ul></div>
@@ -155,6 +155,7 @@ def schema():
         "address": {"@type": "PostalAddress", "streetAddress": b["street"], "addressLocality": b["city"],
                     "addressRegion": b["state"], "postalCode": b["zip"], "addressCountry": "US"},
         "areaServed": AREAS,
+        "openingHours": ["Mo-Fr 08:00-17:00", "Sa 08:00-15:00"],
         "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "license",
                           "name": "California CSLB license #" + b["license"]},
     }, separators=(",", ":"))
